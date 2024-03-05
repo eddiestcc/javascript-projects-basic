@@ -133,6 +133,8 @@ p {
 /* section */
 .section {
   padding: 5rem 0;
+  padding-top: 50%;
+  
 }
 
 .section-center {
