@@ -3,6 +3,13 @@
 // add - add class
 // remove - remove class
 // toggle - toggles class
+// DOM Selectors 
+const btn = document.getElementsByTagName("button")[0];
+let menu = document.querySelector(".links");
 
-const navItems = document.getElementsByClassName("links");
+// functions
 
+btn.addEventListener("click", () => {
+    menu.classList.toggle("show-links");
+    btn.classList.toggle("nav-toggle-click");
+});
