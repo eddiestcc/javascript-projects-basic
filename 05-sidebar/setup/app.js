@@ -1,7 +1,6 @@
 // DOM Selectors 
-const toggleBtn = document.querySelector(".sidebar-toggle");
-const closeBtn = document.querySelector(".close-btn");
 const sideBar = document.querySelector(".sidebar");
+const toggle = document.getElementsByTagName("button");
 
 // function 
 let toggler = () => {
@@ -9,5 +8,5 @@ let toggler = () => {
 }
 
 // event listeners 
-toggleBtn.addEventListener("click", toggler);
-closeBtn.addEventListener("click", toggler);
+toggle[0].addEventListener("click", toggler);
+toggle[1].addEventListener("click", toggler);
