@@ -215,7 +215,7 @@ Modal
   background: rgba(73, 166, 233, 0.5);
   display: grid;
   place-items: center;
-  transition: var(--transition);
+  transition: 0ms;
   visibility: hidden;
   z-index: -10;
 }
