@@ -10,4 +10,3 @@ let selectBtn = () => {
         console.log("click", [i]);
     });
 };
-
