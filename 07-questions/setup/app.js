@@ -8,5 +8,8 @@ let buttons = document.querySelectorAll(".question-btn");
 let selectBtn = () => {
     buttons.forEach(i => {
         console.log("click", [i]);
+        return i;
     });
 };
+
+buttons.addEventListener("click", selectBtn);
