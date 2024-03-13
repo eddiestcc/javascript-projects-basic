@@ -231,7 +231,7 @@ Questions
   margin-bottom: 0;
 }
 /* hide text */
-.question-text {
+.hide {
   display: none;
 }
 .show-text .question-text {
