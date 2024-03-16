@@ -11,7 +11,7 @@ const menu = [
     id: 2,
     title: "diner double",
     category: "lunch",
-    price: 13.99,
+    price: 16.99,
     img: "./images/item-2.jpeg",
     desc: `vaporware iPhone mumblecore selvage raw denim slow-carb leggings gochujang helvetica man braid jianbing. Marfa thundercats `,
   },
@@ -71,4 +71,129 @@ const menu = [
     img: "./images/item-9.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
+  {
+    id: 10,
+    title: "Bison Steak",
+    category: "dinner",
+    price: 22.99,
+    img: "./images/item-10.jpeg",
+    desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
+  },
 ];
+// DOM SELECTORS 
+let itemInfo = document.querySelectorAll(".item-info");
+let itemText = document.querySelectorAll(".item-text");
+let itemImg = document.querySelectorAll(".photo");
+let menuItem = document.querySelectorAll(".menu-item");
+const buttons = document.querySelectorAll(".filter-btn");
+
+
+// Functions 
+// Pass all function 
+
+const passAll = () => {
+  passImg();
+  passPara();
+  passName();
+  passPrice();
+  passCat();
+};
+
+// Pass images from database
+let passImg = () => {
+  itemImg.forEach(itemImgCurrent => {
+    for (let i = 0; i < menu.length; i++)
+    itemImg[i].attributes[1].textContent = menu[i].img;
+  });
+};
+
+// Pass paragraph from database 
+let passPara = () => {
+  itemText.forEach(itemParaCurrent => {
+    for (let i = 0; i < menu.length; i++)
+    itemText[i].childNodes[1].textContent = menu[i].desc;
+  });
+};
+
+// Pass food name from database 
+let passName = () => {
+  itemInfo.forEach(itemFoodCurrent => {
+    for (let i = 0; i < menu.length; i++)
+    itemInfo[i].childNodes[1].textContent = menu[i].title;
+  });
+};
+
+// Pass food price from database 
+let passPrice = () => {
+  itemInfo.forEach(itemPriceCurrent => {
+    for (let i = 0; i < menu.length; i++)
+    itemInfo[i].childNodes[3].textContent ="$" + menu[i].price;
+  });
+};
+
+// Pass category from database 
+let passCat= () => {
+  menuItem.forEach(itemCategoryCurrent => {
+    for (let i = 0; i < menu.length; i++)
+    menuItem[i].valueOf = menu[i].category;
+  });
+};
+
+// Filter fuctions 
+const lunchFilter = () => {
+  menuItem.forEach(itemCategoryCurrent => {
+      for (let i = 0; i < menu.length; i++) {
+      if (menuItem[i].valueOf !== "lunch") {
+        menuItem[i].innerHTML = null;
+     } 
+   }
+  })
+};
+
+const dinnerFilter = () => {
+  menuItem.forEach(itemCategoryCurrent => {
+      for (let i = 0; i < menu.length; i++) {
+      if (menuItem[i].valueOf !== "dinner") {
+        menuItem[i].innerHTML = null;
+     } 
+   }
+  })
+};
+
+const shakesFilter = () => {
+  menuItem.forEach(itemCategoryCurrent => {
+      for (let i = 0; i < menu.length; i++) {
+      if (menuItem[i].valueOf !== "shakes") {
+        menuItem[i].innerHTML = null;
+     } 
+   }
+  })
+};
+
+const breakfastFilter = () => {
+  menuItem.forEach(itemCategoryCurrent => {
+      for (let i = 0; i < menu.length; i++) {
+      if (menuItem[i].valueOf !== "breakfast") {
+        menuItem[i].innerHTML = null;
+     } 
+   }
+  })
+};
+
+const allFilter = () => {
+  menuItem.forEach(itemCategoryCurrent => {
+      for (let i = 0; i < menu.length; i++) {
+      if (menuItem[i].valueOf !== "") {
+        passAll();
+     } 
+   }
+  })
+};
+
+// DOM Event Listener 
+window.addEventListener("DOMContentLoaded", passAll);
+
+buttons[1].addEventListener("click", breakfastFilter);
+buttons[2].addEventListener("click", lunchFilter);
+buttons[3].addEventListener("click", shakesFilter);
+buttons[4].addEventListener("click", dinnerFilter);
