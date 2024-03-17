@@ -75,7 +75,7 @@ const menu = [
     id: 10,
     title: "Bison Steak",
     category: "dinner",
-    price: 22.99,
+    price: 42.99,
     img: "./images/item-10.jpeg",
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
@@ -89,54 +89,34 @@ const buttons = document.querySelectorAll(".filter-btn");
 
 
 // Functions 
-// Pass all function 
+// Pass server information function 
 
-const passAll = () => {
-  passImg();
-  passPara();
-  passName();
-  passPrice();
-  passCat();
-};
-
-// Pass images from database
-let passImg = () => {
+const passInformation = () => {
+  // Img pass 
   itemImg.forEach(itemImgCurrent => {
     for (let i = 0; i < menu.length; i++)
     itemImg[i].attributes[1].textContent = menu[i].img;
   });
-};
-
-// Pass paragraph from database 
-let passPara = () => {
+  // Paragraph pass 
   itemText.forEach(itemParaCurrent => {
     for (let i = 0; i < menu.length; i++)
     itemText[i].childNodes[1].textContent = menu[i].desc;
   });
-};
-
-// Pass food name from database 
-let passName = () => {
+  // Food name pass
   itemInfo.forEach(itemFoodCurrent => {
     for (let i = 0; i < menu.length; i++)
     itemInfo[i].childNodes[1].textContent = menu[i].title;
   });
-};
-
-// Pass food price from database 
-let passPrice = () => {
+  // Food price pass
   itemInfo.forEach(itemPriceCurrent => {
     for (let i = 0; i < menu.length; i++)
     itemInfo[i].childNodes[3].textContent ="$" + menu[i].price;
   });
-};
-
-// Pass category from database 
-let passCat= () => {
+  // Category pass
   menuItem.forEach(itemCategoryCurrent => {
     for (let i = 0; i < menu.length; i++)
     menuItem[i].valueOf = menu[i].category;
-  });
+  }); 
 };
 
 // Filter fuctions 
@@ -190,8 +170,9 @@ const allFilter = () => {
   })
 };
 
+
 // DOM Event Listener 
-window.addEventListener("DOMContentLoaded", passAll);
+window.addEventListener("DOMContentLoaded", passInformation);
 
 buttons[1].addEventListener("click", breakfastFilter);
 buttons[2].addEventListener("click", lunchFilter);
