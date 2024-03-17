@@ -90,30 +90,29 @@ let menuItem = document.querySelectorAll(".menu-item");
 const buttons = document.querySelectorAll(".filter-btn");
 
 // Pass server information function 
-
 const passInformation = () => {
   // Img pass 
-  itemImg.forEach(itemImgCurrent => {
+  itemImg.forEach(_x => {
     for (let i = 0; i < menu.length; i++)
     itemImg[i].attributes[1].textContent = menu[i].img;
   });
   // Paragraph pass 
-  itemText.forEach(itemParaCurrent => {
+  itemText.forEach(_x => {
     for (let i = 0; i < menu.length; i++)
     itemText[i].childNodes[1].textContent = menu[i].desc;
   });
   // Food name pass
-  itemInfo.forEach(itemFoodCurrent => {
+  itemInfo.forEach(_x => {
     for (let i = 0; i < menu.length; i++)
     itemInfo[i].childNodes[1].textContent = menu[i].title;
   });
   // Food price pass
-  itemInfo.forEach(itemPriceCurrent => {
+  itemInfo.forEach(_x => {
     for (let i = 0; i < menu.length; i++)
     itemInfo[i].childNodes[3].textContent ="$" + menu[i].price;
   });
   // Category pass
-  menuItem.forEach(itemCategoryCurrent => {
+  menuItem.forEach(_x => {
     for (let i = 0; i < menu.length; i++)
     menuItem[i].valueOf = menu[i].category;
   }); 
