@@ -1,3 +1,4 @@
+// Database
 const menu = [
   {
     id: 1,
@@ -80,6 +81,7 @@ const menu = [
     desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
   },
 ];
+
 // DOM SELECTORS 
 let itemInfo = document.querySelectorAll(".item-info");
 let itemText = document.querySelectorAll(".item-text");
@@ -87,8 +89,6 @@ let itemImg = document.querySelectorAll(".photo");
 let menuItem = document.querySelectorAll(".menu-item");
 const buttons = document.querySelectorAll(".filter-btn");
 
-
-// Functions 
 // Pass server information function 
 
 const passInformation = () => {
@@ -120,61 +120,13 @@ const passInformation = () => {
 };
 
 // Filter fuctions 
-const lunchFilter = () => {
-  menuItem.forEach(itemCategoryCurrent => {
-      for (let i = 0; i < menu.length; i++) {
-      if (menuItem[i].valueOf !== "lunch") {
-        menuItem[i].innerHTML = null;
-     } 
-   }
-  })
-};
 
-const dinnerFilter = () => {
-  menuItem.forEach(itemCategoryCurrent => {
-      for (let i = 0; i < menu.length; i++) {
-      if (menuItem[i].valueOf !== "dinner") {
-        menuItem[i].innerHTML = null;
-     } 
-   }
-  })
-};
-
-const shakesFilter = () => {
-  menuItem.forEach(itemCategoryCurrent => {
-      for (let i = 0; i < menu.length; i++) {
-      if (menuItem[i].valueOf !== "shakes") {
-        menuItem[i].innerHTML = null;
-     } 
-   }
-  })
-};
-
-const breakfastFilter = () => {
-  menuItem.forEach(itemCategoryCurrent => {
-      for (let i = 0; i < menu.length; i++) {
-      if (menuItem[i].valueOf !== "breakfast") {
-        menuItem[i].innerHTML = null;
-     } 
-   }
-  })
-};
-
-const allFilter = () => {
-  menuItem.forEach(itemCategoryCurrent => {
-      for (let i = 0; i < menu.length; i++) {
-      if (menuItem[i].valueOf !== "") {
-        passAll();
-     } 
-   }
-  })
-};
 
 
 // DOM Event Listener 
 window.addEventListener("DOMContentLoaded", passInformation);
 
-buttons[1].addEventListener("click", breakfastFilter);
-buttons[2].addEventListener("click", lunchFilter);
-buttons[3].addEventListener("click", shakesFilter);
-buttons[4].addEventListener("click", dinnerFilter);
+// buttons[1].addEventListener("click", breakfastFilter);
+// buttons[2].addEventListener("click", lunchFilter);
+// buttons[3].addEventListener("click", shakesFilter);
+// buttons[4].addEventListener("click", dinnerFilter);
