@@ -115,17 +115,32 @@ const passInformation = () => {
   menuItem.forEach(_x => {
     for (let i = 0; i < menu.length; i++)
     menuItem[i].valueOf = menu[i].category;
-  }); 
+  });
+  // Category ID
+  menuItem.forEach(_x => {
+    for (let i = 0; i < menu.length; i++)
+    menuItem[i].valueOf = menu[i].id;
+  });  
 };
 
 // Filter fuctions 
-
-
+let newArrayFuct = () => {
+  let newArray = menu.filter((item) => {
+  return item.category !== "breakfast";
+ })
+ console.log(newArray);
+ if (menu[1].category !== "breakfast") {
+  itemImg[1].attributes[1].textContent = null;
+  itemText[1].childNodes[1].textContent = null;
+  itemInfo[1].childNodes[1].textContent = null;
+  itemInfo[1].childNodes[3].textContent = null;
+ }
+}
 
 // DOM Event Listener 
 window.addEventListener("DOMContentLoaded", passInformation);
 
-// buttons[1].addEventListener("click", breakfastFilter);
+buttons[1].addEventListener("click", newArrayFuct);
 // buttons[2].addEventListener("click", lunchFilter);
 // buttons[3].addEventListener("click", shakesFilter);
 // buttons[4].addEventListener("click", dinnerFilter);
