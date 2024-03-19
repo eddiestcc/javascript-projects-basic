@@ -90,76 +90,6 @@ let itemImg = document.querySelectorAll(".photo");
 let menuItem = document.querySelectorAll(".menu-item");
 const buttons = document.querySelectorAll(".filter-btn");
 
-// Pass server information function 
-// const passInformation = () => {
-//   // Img pass 
-//   itemImg.forEach(_x => {
-//     for (let i = 0; i < menu.length; i++)
-//     itemImg[i].attributes[1].textContent = menu[i].img;
-//   });
-//   // Paragraph pass 
-//   itemText.forEach(_x => {
-//     for (let i = 0; i < menu.length; i++)
-//     itemText[i].childNodes[1].textContent = menu[i].desc;
-//   });
-//   // Food name pass
-//   itemInfo.forEach(_x => {
-//     for (let i = 0; i < menu.length; i++)
-//     itemInfo[i].childNodes[1].textContent = menu[i].title;
-//   });
-//   // Food price pass
-//   itemInfo.forEach(_x => {
-//     for (let i = 0; i < menu.length; i++)
-//     itemInfo[i].childNodes[3].textContent ="$" + menu[i].price;
-//   });
-//   // Category pass
-//   menuItem.forEach(_x => {
-//     for (let i = 0; i < menu.length; i++)
-//     menuItem[i].valueOf = menu[i].category;
-//   });
-//   // Category ID
-//   menuItem.forEach(_x => {
-//     for (let i = 0; i < menu.length; i++)
-//     menuItem[i].valueOf = menu[i].id;
-//   });  
-// };
-
-// let display = () => {
-//   menu.forEach(item => {
-//     // console.log(item, "item");
-  
-   
-//    let edit = `<article class="menu-item">
-//         <div> 
-//           <img class="photo"  src="${item.img}" alt="">
-//         </div>
-//         <header>
-//             <div class="item-info">
-//               <h4 id="title">${item.title}</h4> 
-//               <h4 class="price">$${item.price}</h4>
-//             </div>
-//             <div class="item-text">
-//               <p>${item.desc}</p>
-//             </div>
-//         </header>
-//     </article>
-//     <article class="menu-item">
-//         <div > 
-//           <img class="photo"  src="" alt="">
-//         </div>
-//         <header>
-//             <div class="item-info">
-//               <h4></h4> 
-//               <h4 class="price"></h4>
-//             </div>
-//             <div class="item-text">
-//               <p>
-//         </header>
-//     </article>`
-   
-//   });
-  
-// };
 
 let display = () => {
   let displayMenu = menu.map(function(item){
@@ -178,13 +108,16 @@ let display = () => {
     </header>
 </article>`
   });
-  displayMenu = displayMenu.join("");
+  displayMenu = displayMenu.join('');
   section.innerHTML = displayMenu;
   console.log(displayMenu)
 };
 
 // Filter fuctions 
 
+buttons.forEach(button => {
+  button.ev
+});
 
 // DOM Event Listener 
 window.addEventListener("DOMContentLoaded", display);
