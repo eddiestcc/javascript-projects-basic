@@ -83,6 +83,7 @@ const menu = [
 ];
 
 // DOM SELECTORS 
+let section = document.querySelector(".section-center");
 let itemInfo = document.querySelectorAll(".item-info");
 let itemText = document.querySelectorAll(".item-text");
 let itemImg = document.querySelectorAll(".photo");
@@ -90,57 +91,100 @@ let menuItem = document.querySelectorAll(".menu-item");
 const buttons = document.querySelectorAll(".filter-btn");
 
 // Pass server information function 
-const passInformation = () => {
-  // Img pass 
-  itemImg.forEach(_x => {
-    for (let i = 0; i < menu.length; i++)
-    itemImg[i].attributes[1].textContent = menu[i].img;
+// const passInformation = () => {
+//   // Img pass 
+//   itemImg.forEach(_x => {
+//     for (let i = 0; i < menu.length; i++)
+//     itemImg[i].attributes[1].textContent = menu[i].img;
+//   });
+//   // Paragraph pass 
+//   itemText.forEach(_x => {
+//     for (let i = 0; i < menu.length; i++)
+//     itemText[i].childNodes[1].textContent = menu[i].desc;
+//   });
+//   // Food name pass
+//   itemInfo.forEach(_x => {
+//     for (let i = 0; i < menu.length; i++)
+//     itemInfo[i].childNodes[1].textContent = menu[i].title;
+//   });
+//   // Food price pass
+//   itemInfo.forEach(_x => {
+//     for (let i = 0; i < menu.length; i++)
+//     itemInfo[i].childNodes[3].textContent ="$" + menu[i].price;
+//   });
+//   // Category pass
+//   menuItem.forEach(_x => {
+//     for (let i = 0; i < menu.length; i++)
+//     menuItem[i].valueOf = menu[i].category;
+//   });
+//   // Category ID
+//   menuItem.forEach(_x => {
+//     for (let i = 0; i < menu.length; i++)
+//     menuItem[i].valueOf = menu[i].id;
+//   });  
+// };
+
+// let display = () => {
+//   menu.forEach(item => {
+//     // console.log(item, "item");
+  
+   
+//    let edit = `<article class="menu-item">
+//         <div> 
+//           <img class="photo"  src="${item.img}" alt="">
+//         </div>
+//         <header>
+//             <div class="item-info">
+//               <h4 id="title">${item.title}</h4> 
+//               <h4 class="price">$${item.price}</h4>
+//             </div>
+//             <div class="item-text">
+//               <p>${item.desc}</p>
+//             </div>
+//         </header>
+//     </article>
+//     <article class="menu-item">
+//         <div > 
+//           <img class="photo"  src="" alt="">
+//         </div>
+//         <header>
+//             <div class="item-info">
+//               <h4></h4> 
+//               <h4 class="price"></h4>
+//             </div>
+//             <div class="item-text">
+//               <p>
+//         </header>
+//     </article>`
+   
+//   });
+  
+// };
+
+let display = () => {
+  let displayMenu = menu.map(function(item){
+    return `<article class="menu-item">
+    <div> 
+      <img class="photo"  src=${item.img} alt=>
+    </div>
+    <header>
+        <div class="item-info">
+          <h4 id="title">${item.title}</h4> 
+          <h4 class="price">$${item.price}</h4>
+        </div>
+        <div class="item-text">
+          <p>${item.desc}</p>
+        </div>
+    </header>
+</article>`
   });
-  // Paragraph pass 
-  itemText.forEach(_x => {
-    for (let i = 0; i < menu.length; i++)
-    itemText[i].childNodes[1].textContent = menu[i].desc;
-  });
-  // Food name pass
-  itemInfo.forEach(_x => {
-    for (let i = 0; i < menu.length; i++)
-    itemInfo[i].childNodes[1].textContent = menu[i].title;
-  });
-  // Food price pass
-  itemInfo.forEach(_x => {
-    for (let i = 0; i < menu.length; i++)
-    itemInfo[i].childNodes[3].textContent ="$" + menu[i].price;
-  });
-  // Category pass
-  menuItem.forEach(_x => {
-    for (let i = 0; i < menu.length; i++)
-    menuItem[i].valueOf = menu[i].category;
-  });
-  // Category ID
-  menuItem.forEach(_x => {
-    for (let i = 0; i < menu.length; i++)
-    menuItem[i].valueOf = menu[i].id;
-  });  
+  displayMenu = displayMenu.join("");
+  section.innerHTML = displayMenu;
+  console.log(displayMenu)
 };
 
 // Filter fuctions 
-let newArrayFuct = () => {
-  let newArray = menu.filter((item) => {
-  return item.category !== "breakfast";
- })
- console.log(newArray);
- if (menu[1].category !== "breakfast") {
-  itemImg[1].attributes[1].textContent = null;
-  itemText[1].childNodes[1].textContent = null;
-  itemInfo[1].childNodes[1].textContent = null;
-  itemInfo[1].childNodes[3].textContent = null;
- }
-}
+
 
 // DOM Event Listener 
-window.addEventListener("DOMContentLoaded", passInformation);
-
-buttons[1].addEventListener("click", newArrayFuct);
-// buttons[2].addEventListener("click", lunchFilter);
-// buttons[3].addEventListener("click", shakesFilter);
-// buttons[4].addEventListener("click", dinnerFilter);
+window.addEventListener("DOMContentLoaded", display);
