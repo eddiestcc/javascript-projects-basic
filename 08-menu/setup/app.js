@@ -93,7 +93,7 @@ const buttons = document.querySelectorAll(".filter-btn");
 
 let display = () => {
   let displayMenu = menu.map(function(item){
-    return `<article class="menu-item">
+    return `<article class="menu-item" class=${item.category}>
     <div> 
       <img class="photo"  src=${item.img} alt=>
     </div>
@@ -110,14 +110,22 @@ let display = () => {
   });
   displayMenu = displayMenu.join('');
   section.innerHTML = displayMenu;
-  console.log(displayMenu)
 };
 
 // Filter fuctions 
+// let test = () => {
+//   menu.forEach(item => {
+//     return item.category
+//   })
+// }
 
 buttons.forEach(button => {
-  button.ev
-});
+  button.addEventListener("click", () => {
+    if (button.textContent !== menu[0].category) {
+      
+    }
+   });
+  });
 
 // DOM Event Listener 
 window.addEventListener("DOMContentLoaded", display);
