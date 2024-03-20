@@ -84,13 +84,10 @@ const menu = [
 
 // DOM SELECTORS 
 let section = document.querySelector(".section-center");
-let itemInfo = document.querySelectorAll(".item-info");
-let itemText = document.querySelectorAll(".item-text");
-let itemImg = document.querySelectorAll(".photo");
 let menuItem = document.querySelectorAll(".menu-item");
 const buttons = document.querySelectorAll(".filter-btn");
 
-
+// Display each menu item function 
 let display = (menuItems) => {
   let displayMenu = menuItems.map(function(item){
     return `<article class="menu-item" data-id=${item.category}>
@@ -112,13 +109,7 @@ let display = (menuItems) => {
   section.innerHTML = displayMenu;
 };
 
-// Filter fuctions 
-// let test = () => {
-//   menu.forEach(item => {
-//     return item.category
-//   })
-// }
-
+// Filter button function 
 buttons.forEach(button => {
   button.addEventListener("click", (e) => {
    const category = e.currentTarget.dataset.id;
