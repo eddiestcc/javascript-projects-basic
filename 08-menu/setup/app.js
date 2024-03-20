@@ -84,8 +84,29 @@ const menu = [
 
 // DOM SELECTORS 
 let section = document.querySelector(".section-center");
+let btnContainer = document.querySelector(".btn-container");
 let menuItem = document.querySelectorAll(".menu-item");
 const buttons = document.querySelectorAll(".filter-btn");
+
+// Display all buttons 
+let setUpCatBtn = () => { 
+  const categories = menu.reduce(function(values, item){ 
+  if (!values.includes(item.category)) {
+    values.push(item.category);
+  }
+  return values; 
+},
+["all"]
+);
+console.log(categories);
+let displayBtnMenu = categories.map(function(category){
+  return `<button type="button" class="filter-btn" data-id=${category}>${category}</button>`
+});
+displayBtnMenu = displayBtnMenu.join('');
+btnContainer.innerHTML = displayBtnMenu;
+};
+
+
 
 // Display each menu item function 
 let display = (menuItems) => {
@@ -109,7 +130,7 @@ let display = (menuItems) => {
   section.innerHTML = displayMenu;
 };
 
-// Filter button function 
+// Filter button functionality
 buttons.forEach(button => {
   button.addEventListener("click", (e) => {
    const category = e.currentTarget.dataset.id;
@@ -126,4 +147,5 @@ buttons.forEach(button => {
 // DOM Event Listener 
 window.addEventListener("DOMContentLoaded", () => {
   display(menu)
+  setUpCatBtn();
 });
