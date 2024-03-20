@@ -91,9 +91,9 @@ let menuItem = document.querySelectorAll(".menu-item");
 const buttons = document.querySelectorAll(".filter-btn");
 
 
-let display = () => {
-  let displayMenu = menu.map(function(item){
-    return `<article class="menu-item" class=${item.category}>
+let display = (menuItems) => {
+  let displayMenu = menuItems.map(function(item){
+    return `<article class="menu-item" data-id=${item.category}>
     <div> 
       <img class="photo"  src=${item.img} alt=>
     </div>
@@ -120,12 +120,19 @@ let display = () => {
 // }
 
 buttons.forEach(button => {
-  button.addEventListener("click", () => {
-    if (button.textContent !== menu[0].category) {
-      
-    }
+  button.addEventListener("click", (e) => {
+   const category = e.currentTarget.dataset.id;
+   const menuCategory = menu.filter((menuItem) => {
+    return menuItem.category === category
+   })
+   if (category === "all") {
+    display(menu);
+   } else
+    display(menuCategory);
    });
   });
 
 // DOM Event Listener 
-window.addEventListener("DOMContentLoaded", display);
+window.addEventListener("DOMContentLoaded", () => {
+  display(menu)
+});
