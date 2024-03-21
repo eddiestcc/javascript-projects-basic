@@ -328,9 +328,15 @@ header {
 .title h2 {
   text-align: center;
   text-transform: uppercase;
+  
 }
 .title span {
   color: var(--clr-secondary);
+}
+.title {
+  display: flex;
+  justify-content: center;
+  text-transform: uppercase;
 }
 #about,
 #services,
@@ -384,4 +390,22 @@ footer p {
   100% {
     transform: scale(1);
   }
+}
+
+.clear-btn{
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  color: white;
+  background: none;
+  border-color: #fff;
+  border-style: solid;
+}
+
+.clear-btn:hover {
+  background-color: white;
+  color: hsla(182, 63%, 54%);
+  transition: 0.5s;
 }
