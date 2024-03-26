@@ -14,19 +14,25 @@
   </head>
   <body id="home">
     <!-- NAV BAR  -->
-    <nav class="fixed-nav ">
+
+    <nav class="fixed-nav-flex fixed-nav">
       <div class="nav-center nav-header">
         <!-- LOGO  -->  
-        <div>
-          <img src="logo.svg" alt="logo" class="logo">
-        </div>
+          <div>
+            <img src="logo.svg" alt="logo" class="logo">
+          </div>
+          <!-- DROPDOWN BUTTON  -->
+          <div class="drop-down">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+      </div>
         <!-- LINKS -->
-        <ul class="links">
-          <li><a href="#home">home</a></li>
-          <li><a href="#about">about</a></li>
-          <li><a href="#services">services</a></li>
-          <li><a href="#tours">tours</a></li>
-        </ul>
+          <ul class="links links-hide">
+            <li><a href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#services">services</a></li>
+            <li><a href="#tours">tours</a></li>
+          </ul>
       </div>
     </nav>
     <!-- HEADER  -->
@@ -37,19 +43,27 @@
         <button class="clear-btn">explore tours</button>
       </div>
       <!-- STICKY BUTTON  -->
-      <button class="top-link show-link"></button>
+      <div class="top-link show-link">
+        <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+      </div>
     </header>
     <!-- ABOUT SECTION  -->
     <section id="about">
-      <h2 class="title">about<span>us</span></h2>
+      <h2 class="title">about
+        <span class="space">us</span>
+      </h2>
     </section>
     <!-- TITLE SECTION  -->
     <section id="services">
-      <h2 class="title">our <span>services</span></h2>
+      <h2 class="title">our 
+        <span class="space">services</span>
+      </h2>
     </section>
     <!-- TOURS SECTION  -->
     <section id="tours">
-      <h2 class="title">featured <span>tours</span></h2>
+      <h2 class="title">featured 
+        <span class="space">tours</span>
+      </h2>
     </section>
     <!-- FOOTER  -->
     <footer>
@@ -59,5 +73,6 @@
 
     <!-- javascript -->
     <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/26708f9c21.js" crossorigin="anonymous"></script>
   </body>
 </html>

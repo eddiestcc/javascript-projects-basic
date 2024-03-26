@@ -199,6 +199,7 @@ nav {
   padding: 1rem 1.5rem;
 }
 /* fixed nav */
+
 .fixed-nav {
   position: fixed;
   top: 0;
@@ -296,7 +297,54 @@ nav {
   .links a:hover {
     color: var(--clr-white);
   }
+
+  
 }
+.clear-nav {
+  background-color: transparent;
+  box-shadow: none;
+  color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
+  position:absolute;
+  .drop-down {
+    display: none;
+  }
+}
+
+
+.fa-solid {
+  color: var(--clr-grey-1);
+}
+.fa-solid:hover {
+  transition: 0.5s;
+  color: var(--clr-secondary);
+}
+@media only screen and (min-width: 800px) {
+  .fixed-nav-flex {
+    display: flex;
+    align-items: center;
+  }
+    .drop-down {
+      display: none;
+    }
+    
+}
+@media only screen and (max-width: 799px) {
+    .fixed-nav-flex {
+      display: block;
+    }
+    .links-hide {
+      transition: 0.5s;
+      display: none;
+    }
+}
+
+.clear-nav{
+  color: white;
+}
+
 /* hero */
 header {
   min-height: 100vh;
@@ -324,6 +372,28 @@ header {
     max-width: 40rem;
   }
 }
+.clear-btn{
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .2rem;
+  color: white;
+  background: none;
+  border-color: #fff;
+  border-style: solid;
+}
+
+.clear-btn:hover {
+  background-color: white;
+  color: hsla(182, 63%, 54%);
+  transition: 0.5s;
+}
+
+.fa-arrow-up {
+  color: white
+}
+
 /* sections and title */
 .title h2 {
   text-align: center;
@@ -391,21 +461,12 @@ footer p {
     transform: scale(1);
   }
 }
-
-.clear-btn{
-  padding: 0.5rem 1.5rem;
-  font-size: 1rem;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  text-transform: uppercase;
-  letter-spacing: .2rem;
-  color: white;
-  background: none;
-  border-color: #fff;
-  border-style: solid;
+.space {
+  padding-left: 1rem;
 }
 
-.clear-btn:hover {
-  background-color: white;
-  color: hsla(182, 63%, 54%);
-  transition: 0.5s;
-}
+
+
+
+
+
