@@ -320,7 +320,7 @@ nav {
   .clear-nav {
     background-color: transparent;
     box-shadow: none;
-    color: white;
+    color: white ;
     top: 0;
     left: 0;
     width: 100%;
@@ -330,6 +330,9 @@ nav {
       }
       .drop-down {
         display: none;
+      }
+      .links a:hover {
+        color: white;
       }
     }
     
@@ -341,6 +344,10 @@ nav {
     .links-hide {
       display: none;
     }
+    .links-show {
+      display: block;
+    }
+  
 }
 
 /* hero */
@@ -451,6 +458,10 @@ footer p {
 
   visibility: hidden;
   z-index: -100;
+  
+}
+.top-link :hover{
+  color: var(--clr-white);
 }
 .show-link {
   visibility: visible;

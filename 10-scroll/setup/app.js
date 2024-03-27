@@ -16,6 +16,7 @@ const hamburger = document.querySelector(".fa-bars");
 const links = document.querySelector(".links");
 const navbar = document.querySelector(".fixed-nav");
 const clearBtn = document.querySelector(".clear-btn");
+const linksCont = document.querySelector(".links-container")
 
 // SHOW TOP LINK FUNCTION 
 let showTopLink = () => {
@@ -56,8 +57,10 @@ let toggleSticky = () => {
 // HAMBURGER MENU TOGGLE 
 
 let toggleMenu = () => {
-    links.classList.toggle("links-hide");
+    links.classList.toggle("links-show");
 }
+
+
 
 // DOM EVENT LISTENERS 
 window.addEventListener("scroll", () => {
