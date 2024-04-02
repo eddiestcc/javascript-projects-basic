@@ -231,11 +231,12 @@ About
   border: none;
   text-transform: capitalize;
   font-size: 1rem;
-  display: block;
   background: var(--clr-grey-9);
   cursor: pointer;
   transition: var(--transition);
   letter-spacing: var(--spacing);
+  display: flex;
+  justify-content: center;
 }
 .tab-btn:hover:not(.active) {
   background: var(--clr-primary-10);
