@@ -3,7 +3,6 @@ const buttons = document.querySelectorAll(".tab-btn");
 const content = document.querySelectorAll(".content");
 
 // SWITCH FUNCTION 
-
 let switchSelection = () => {
     buttons.forEach(button => {
         button.addEventListener("click", () => {
